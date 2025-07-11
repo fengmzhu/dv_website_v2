@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  # Combined LAMP stack
+  lamp:
+    build: .
+    container_name: dv-lamp
+    ports:
+      - "8080:80"
+      - "8081:8081"
+    volumes:
+      - ./it-domain:/var/www/it-domain
+      - ./nx-domain:/var/www/nx-domain
+      - ./docker/apache/combined.conf:/etc/apache2/sites-available/000-default.conf
+    environment:
+      # IT Domain DB settings
+      - IT_DB_HOST=localhost
+      - IT_DB_NAME=it_domain_db
+      - IT_DB_USER=it_user
+      - IT_DB_PASS=it_password
+      # NX Domain DB settings
+      - NX_DB_HOST=localhost
+      - NX_DB_NAME=nx_domain_db
+      - NX_DB_USER=nx_user
+      - NX_DB_PASS=nx_password
+    network_mode: "host"
+
+  # Combined MySQL instance
+  mysql:
+    image: mysql:8.0
+    container_name: dv-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+    volumes:
+      - dv_data:/var/lib/mysql
+      - ./database/combined-init.sql:/docker-entrypoint-initdb.d/01-init.sql
+    network_mode: "host"
+
+volumes:
+  dv_data:
