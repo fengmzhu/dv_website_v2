@@ -142,6 +142,7 @@ $to_summary = $db->query($to_summary_sql)->fetchAll();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NX Domain - DV Reports & TO Summary</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
@@ -370,9 +371,17 @@ $to_summary = $db->query($to_summary_sql)->fetchAll();
                             <tbody>
                                 <?php foreach ($to_summary as $summary): ?>
                                 <tr>
-                                    <td><strong><?php echo htmlspecialchars($summary['project']); ?></strong></td>
+                                    <td>
+                                        <a href="javascript:void(0)" onclick="showIPDetails('<?php echo htmlspecialchars($summary['project']); ?>', 'nx')" class="text-decoration-none">
+                                            <strong><?php echo htmlspecialchars($summary['project']); ?></strong>
+                                        </a>
+                                    </td>
                                     <td><?php echo htmlspecialchars($summary['spip_ip'] ?? 'N/A'); ?></td>
-                                    <td><?php echo htmlspecialchars($summary['ip'] ?? 'N/A'); ?></td>
+                                    <td>
+                                        <a href="javascript:void(0)" onclick="showIPDetails('<?php echo htmlspecialchars($summary['project']); ?>', 'nx')" class="text-decoration-none fw-bold">
+                                            <?php echo htmlspecialchars($summary['ip'] ?? 'N/A'); ?>
+                                        </a>
+                                    </td>
                                     <td><?php echo htmlspecialchars($summary['dv_engineer'] ?? 'N/A'); ?></td>
                                     <td><?php echo htmlspecialchars($summary['digital_designer'] ?? 'N/A'); ?></td>
                                     <td><?php echo htmlspecialchars($summary['business_unit'] ?? 'N/A'); ?></td>
@@ -439,6 +448,8 @@ $to_summary = $db->query($to_summary_sql)->fetchAll();
             </div>
         <?php endif; ?>
     </div>
+
+    <?php include 'ip-detail-modal.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

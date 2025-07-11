@@ -64,6 +64,7 @@ $to_summary = $db->query("SELECT * FROM to_summary_view ORDER BY project")->fetc
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NX Domain - DV Reports & TO Summary</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         .table-responsive {
             font-size: 0.75rem;
@@ -396,12 +397,20 @@ $to_summary = $db->query("SELECT * FROM to_summary_view ORDER BY project")->fetc
                                 <?php foreach ($to_summary as $summary): ?>
                                 <tr>
                                     <!-- Project Name -->
-                                    <td><strong><?php echo htmlspecialchars($summary['project'] ?? ''); ?></strong></td>
+                                    <td>
+                                        <a href="javascript:void(0)" onclick="showIPDetails('<?php echo htmlspecialchars($summary['project'] ?? ''); ?>', 'nx')" class="text-decoration-none">
+                                            <strong><?php echo htmlspecialchars($summary['project'] ?? ''); ?></strong>
+                                        </a>
+                                    </td>
                                     
                                     <!-- Basic Project Info -->
                                     <td><code><?php echo htmlspecialchars($summary['task_index'] ?? ''); ?></code></td>
                                     <td><?php echo htmlspecialchars($summary['spip_ip'] ?? ''); ?></td>
-                                    <td><?php echo htmlspecialchars($summary['ip'] ?? ''); ?></td>
+                                    <td>
+                                        <a href="javascript:void(0)" onclick="showIPDetails('<?php echo htmlspecialchars($summary['project'] ?? ''); ?>', 'nx')" class="text-decoration-none fw-bold">
+                                            <?php echo htmlspecialchars($summary['ip'] ?? ''); ?>
+                                        </a>
+                                    </td>
                                     <td><?php echo htmlspecialchars($summary['ip_postfix'] ?? ''); ?></td>
                                     <td>
                                         <?php if ($summary['ip_subtype']): ?>
@@ -501,6 +510,8 @@ $to_summary = $db->query("SELECT * FROM to_summary_view ORDER BY project")->fetc
             </div>
         <?php endif; ?>
     </div>
+
+    <?php include 'ip-detail-modal.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
