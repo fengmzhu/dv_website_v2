@@ -1,0 +1,30 @@
+[
+  {
+    "source": "it-domain-to-be-added.json",
+    "data": {
+      "IP Subtype": "default",
+      "IP Postfix": "",
+      "DD": "Ramon",
+      "BU": "CN",
+      "AD": "Peter",
+      "spec version": "v1.0",
+      "spec path": "/project/spec/RL6577_spec.pdf",
+      "Inherit from IP": "RL6576",
+      "re-use IP": "N"
+    }
+  },
+  {
+    "source": "it-domain-to-be-added.json",
+    "data": {
+      "IP Subtype": "gen2x1",
+      "IP Postfix": "2x1",
+      "DD": "Jimmy",
+      "BU": "PC",
+      "AD": "Tom",
+      "spec version": "v2.0",
+      "spec path": "/project/spec/RL6693_spec.pdf",
+      "Inherit from IP": "RL6692",
+      "re-use IP": "Y"
+    }
+  }
+]

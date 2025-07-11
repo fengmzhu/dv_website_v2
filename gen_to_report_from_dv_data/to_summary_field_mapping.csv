@@ -1,0 +1,67 @@
+Project,TO_Summary_Field,TO_Summary_Value,Source_File,Original_Field,Original_Value
+RLE1339,Index,174,it_domain_dv_tasks.json,Index,174
+RLE1339,Project,RLE1339,it_domain_dv_tasks.json,Project,RLE1339
+RLE1339,SPIP_IP,IP: WiFi RF Transceiver,it_domain_allproject.json,IP,IP: WiFi RF Transceiver
+RLE1339,IP,AFE,it_domain_dv_tasks.json,IP,AFE
+RLE1339,IP Postfix,,it-domain-to-be-added.json,IP Postfix,
+RLE1339,IP Subtype,default,it-domain-to-be-added.json,IP Subtype,default
+RLE1339,Alternative Name,nan,it_domain_dv_tasks.json,Alternative Name,nan
+RLE1339,Line Coverage,88.5,nx-domain-to-be-added.json,Line Coverage,88.5
+RLE1339,FSM Coverage,78.5,nx-domain-to-be-added.json,FSM Coverage,78.5
+RLE1339,Interface Toggle Coverage,82.1,nx-domain-to-be-added.json,Interface Toggle Coverage,82.1
+RLE1339,Toggle Coverage,79.3,nx-domain-to-be-added.json,Toggle Coverage,79.3
+RLE1339,Coverage Report Path,/project/coverage/RL6577_coverage.html,nx-domain-to-be-added.json,Coverage Report Path,/project/coverage/RL6577_coverage.html
+RLE1339,DV,LI,it_domain_dv_tasks.json,DV,LI
+RLE1339,DD,Jimmy,it_domain_dv_tasks.json,DD,Jimmy
+RLE1339,BU,CN,it_domain_dv_tasks.json,BU,CN
+RLE1339,sanity SVN,http://dtdinfo/svn/RD/RL6577/sanity,nx-domain-to-be-added.json,sanity SVN,http://dtdinfo/svn/RD/RL6577/sanity
+RLE1339,sanity SVN ver,9876,nx-domain-to-be-added.json,sanity SVN ver,9876
+RLE1339,release SVN,http://dtdinfo/svn/RD/RL6577,nx-domain-to-be-added.json,release SVN,http://dtdinfo/svn/RD/RL6577
+RLE1339,release SVN ver,12345,nx-domain-to-be-added.json,release SVN ver,12345
+RLE1339,git path,ssh://git.xxx/RL6577.git,nx-domain-to-be-added.json,git path,ssh://git.xxx/RL6577.git
+RLE1339,git version,a1b2c3d4e5f6789012345678901234567890abcd,nx-domain-to-be-added.json,git version,a1b2c3d4e5f6789012345678901234567890abcd
+RLE1339,golden checklist,/project/golden/RL6577_checklist.xlsx,nx-domain-to-be-added.json,golden checklist,/project/golden/RL6577_checklist.xlsx
+RLE1339,golden checklist version,2.1,nx-domain-to-be-added.json,golden checklist version,2.1
+RLE1339,TO Date,2024-10-15 00:00:00,nx-domain-to-be-added.json,TO Date,2024-10-15 00:00:00
+RLE1339,SPIP url,https://jira.rd.realtek.com/browse/RLE1339-8,it_domain_dv_tasks.json,SPIP,https://jira.rd.realtek.com/browse/RLE1339-8
+RLE1339,Wiki url,https://wiki.realtek.com/display/RDCDIGITAL/AFE_RLE1339,it_domain_dv_tasks.json,WIKI,https://wiki.realtek.com/display/RDCDIGITAL/AFE_RLE1339
+RLE1339,spec version,v1.0,it-domain-to-be-added.json,spec version,v1.0
+RLE1339,spec path,/project/spec/RL6577_spec.pdf,it-domain-to-be-added.json,spec path,/project/spec/RL6577_spec.pdf
+RLE1339,RTL last update timestamp,2024-12-10 14:30:00,nx-domain-to-be-added.json,RTL last update timestamp,2024-12-10 14:30:00
+RLE1339,TO report creation timestamp,2024-12-15 09:15:00,nx-domain-to-be-added.json,TO report creation timestamp,2024-12-15 09:15:00
+RLE1339,AD,Peter,it-domain-to-be-added.json,AD,Peter
+RLE1339,Inherit from IP,RL6576,it-domain-to-be-added.json,Inherit from IP,RL6576
+RLE1339,re-use IP,N,it-domain-to-be-added.json,re-use IP,N
+RL1234,Index,180,it_domain_dv_tasks.json,Index,180
+RL1234,Project,RL1234,it_domain_dv_tasks.json,Project,RL1234
+RL1234,SPIP_IP,IP: USB_PCIE_SATA,it_domain_allproject.json,IP,IP: USB_PCIE_SATA
+RL1234,IP,pcie,it_domain_dv_tasks.json,IP,pcie
+RL1234,IP Postfix,2x1,it-domain-to-be-added.json,IP Postfix,2x1
+RL1234,IP Subtype,gen2x1,it-domain-to-be-added.json,IP Subtype,gen2x1
+RL1234,Alternative Name,nan,it_domain_dv_tasks.json,Alternative Name,nan
+RL1234,Line Coverage,58.5,nx-domain-to-be-added.json,Line Coverage,58.5
+RL1234,FSM Coverage,58.5,nx-domain-to-be-added.json,FSM Coverage,58.5
+RL1234,Interface Toggle Coverage,52.1,nx-domain-to-be-added.json,Interface Toggle Coverage,52.1
+RL1234,Toggle Coverage,59.3,nx-domain-to-be-added.json,Toggle Coverage,59.3
+RL1234,Coverage Report Path,/project/coverage/RL6693_coverage.html,nx-domain-to-be-added.json,Coverage Report Path,/project/coverage/RL6693_coverage.html
+RL1234,DV,CH,it_domain_dv_tasks.json,DV,CH
+RL1234,DD,Jimmy,it_domain_dv_tasks.json,DD,Jimmy
+RL1234,BU,CN,it_domain_dv_tasks.json,BU,CN
+RL1234,sanity SVN,http://dtdinfo/svn/RD/RL6693/sanity,nx-domain-to-be-added.json,sanity SVN,http://dtdinfo/svn/RD/RL6693/sanity
+RL1234,sanity SVN ver,5432,nx-domain-to-be-added.json,sanity SVN ver,5432
+RL1234,release SVN,http://dtdinfo/svn/RD/xxx,nx-domain-to-be-added.json,release SVN,http://dtdinfo/svn/RD/xxx
+RL1234,release SVN ver,18920,nx-domain-to-be-added.json,release SVN ver,18920
+RL1234,git path,ssh://git.xxx/RL6693.git,nx-domain-to-be-added.json,git path,ssh://git.xxx/RL6693.git
+RL1234,git version,f9e8d7c6b5a4321098765432109876543210fedc,nx-domain-to-be-added.json,git version,f9e8d7c6b5a4321098765432109876543210fedc
+RL1234,golden checklist,/project/golden/RL6693_checklist.xlsx,nx-domain-to-be-added.json,golden checklist,/project/golden/RL6693_checklist.xlsx
+RL1234,golden checklist version,1.5,nx-domain-to-be-added.json,golden checklist version,1.5
+RL1234,TO Date,2020-05-15 00:00:00,nx-domain-to-be-added.json,TO Date,2020-05-15 00:00:00
+RL1234,SPIP url,https://jira.rd.realtek.com/browse/RLE1343-10,it_domain_dv_tasks.json,SPIP,https://jira.rd.realtek.com/browse/RLE1343-10
+RL1234,Wiki url,https://wiki.realtek.com/display/RDCDIGITAL/AFE_RLE1343,it_domain_dv_tasks.json,WIKI,https://wiki.realtek.com/display/RDCDIGITAL/AFE_RLE1343
+RL1234,spec version,v2.0,it-domain-to-be-added.json,spec version,v2.0
+RL1234,spec path,/project/spec/RL6693_spec.pdf,it-domain-to-be-added.json,spec path,/project/spec/RL6693_spec.pdf
+RL1234,RTL last update timestamp,2020-10-08 16:45:00,nx-domain-to-be-added.json,RTL last update timestamp,2020-10-08 16:45:00
+RL1234,TO report creation timestamp,2020-10-12 11:20:00,nx-domain-to-be-added.json,TO report creation timestamp,2020-10-12 11:20:00
+RL1234,AD,Tom,it-domain-to-be-added.json,AD,Tom
+RL1234,Inherit from IP,RL6692,it-domain-to-be-added.json,Inherit from IP,RL6692
+RL1234,re-use IP,Y,it-domain-to-be-added.json,re-use IP,Y

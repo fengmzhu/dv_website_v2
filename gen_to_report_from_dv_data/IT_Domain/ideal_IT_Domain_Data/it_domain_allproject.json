@@ -1,0 +1,38 @@
+[
+  {
+    "source": "allproject-2025-06-23-09-32-12.xlsx",
+    "sheet": "subtask",
+    "data": {
+      "Project": "RLE1339",
+      "Subtask Link": "RLE1339-144",
+      "Summary": "[AUTO] yutingli RDC DV design (basic) sub-task",
+      "Product": "AFE",
+      "Assignee": "李昱廷",
+      "Emp_id": "R9668",
+      "IP": "IP: WiFi RF Transceiver",
+      "Subtask Status": "SANITY DONE",
+      "Update Time": "2025-06-20",
+      "Week": "2025 W25",
+      "Weight": 0.2,
+      "Progress update": "[2025/06/16]\nRFC RL7061\n- 建立 sanity 環境, porting to custom\n  + FT_1~FT_4 (interface/LUT/regtable)"
+    }
+  },
+  {
+    "source": "allproject-2025-06-23-09-32-12.xlsx",
+    "sheet": "subtask",
+    "data": {
+      "Project": "RL1234",
+      "Subtask Link": "RL1234-1142",
+      "Summary": "[AUTO] yutingli generic design sub-task",
+      "Product": NaN,
+      "Assignee": "鄒芷涵",
+      "Emp_id": "R9123",
+      "IP": "IP: USB_PCIE_SATA",
+      "Subtask Status": "In Progress Design",
+      "Update Time": "2025-06-20",
+      "Week": "2025 W25",
+      "Weight": 0.8,
+      "Progress update": "[2025/06/09]\npcie\n- regression features script\n  + 更新 wiki: get_regression_features, check_regression_features\n  + get_regression_features 新增由 dvdb 查 regression 路徑功能 (暫停)\n  + 建立 PCIe golden checklist (on-going)\n- LA114-CS04-電子郵件社交工程"
+    }
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "source": "nx-domain-to-be-added.json",
+    "data": {
+      "Line Coverage": "88.5",
+      "FSM Coverage": "78.5",
+      "Interface Toggle Coverage": "82.1",
+      "Toggle Coverage": "79.3",
+      "Coverage Report Path": "/project/coverage/RL6577_coverage.html",
+      "sanity SVN": "http://dtdinfo/svn/RD/RL6577/sanity",
+      "sanity SVN ver": "9876",
+      "release SVN": "http://dtdinfo/svn/RD/RL6577",
+      "release SVN ver": "12345",
+      "git path": "ssh://git.xxx/RL6577.git",
+      "git version": "a1b2c3d4e5f6789012345678901234567890abcd",
+      "golden checklist": "/project/golden/RL6577_checklist.xlsx",
+      "golden checklist version": "2.1",
+      "RTL last update timestamp": "2024-12-10 14:30:00",
+      "TO report creation timestamp": "2024-12-15 09:15:00",
+      "TO Date": "2024-10-15 00:00:00"
+    }
+  },
+  {
+    "source": "nx-domain-to-be-added.json",
+    "data": {
+      "Line Coverage": "58.5",
+      "FSM Coverage": "58.5",
+      "Interface Toggle Coverage": "52.1",
+      "Toggle Coverage": "59.3",
+      "Coverage Report Path": "/project/coverage/RL6693_coverage.html",
+      "sanity SVN": "http://dtdinfo/svn/RD/RL6693/sanity",
+      "sanity SVN ver": "5432",
+      "release SVN": "http://dtdinfo/svn/RD/xxx",
+      "release SVN ver": "18920",
+      "git path": "ssh://git.xxx/RL6693.git",
+      "git version": "f9e8d7c6b5a4321098765432109876543210fedc",
+      "golden checklist": "/project/golden/RL6693_checklist.xlsx",
+      "golden checklist version": "1.5",
+      "RTL last update timestamp": "2020-10-08 16:45:00",
+      "TO report creation timestamp": "2020-10-12 11:20:00",
+      "TO Date": "2020-05-15 00:00:00"
+    }
+  }
+]
