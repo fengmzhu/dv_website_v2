@@ -7,7 +7,7 @@ RUN docker-php-ext-install pdo pdo_mysql mysqli
 RUN a2enmod rewrite
 
 # Copy Apache configuration
-COPY docker/apache/*.conf /etc/apache2/sites-available/
+COPY docker/configs/apache/*.conf /etc/apache2/sites-available/
 
 # Set working directory
 WORKDIR /var/www/html
