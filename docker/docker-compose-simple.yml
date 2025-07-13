@@ -1,0 +1,36 @@
+services:
+  it-domain-web:
+    build: .
+    container_name: it-domain-web-simple
+    ports:
+      - "8080:80"
+    environment:
+      - DB_HOST=localhost
+      - DB_NAME=it_domain_db
+      - DB_USER=it_user
+      - DB_PASS=it_password
+    command: >
+      sh -c "
+      cp -r /workspace/dv_website_v2/it-domain/* /var/www/html/ &&
+      apache2-foreground
+      "
+    volumes:
+      - .:/workspace/dv_website_v2
+
+  nx-domain-web:
+    build: .
+    container_name: nx-domain-web-simple
+    ports:
+      - "8081:80"
+    environment:
+      - DB_HOST=localhost
+      - DB_NAME=nx_domain_db
+      - DB_USER=nx_user
+      - DB_PASS=nx_password
+    command: >
+      sh -c "
+      cp -r /workspace/dv_website_v2/nx-domain/* /var/www/html/ &&
+      apache2-foreground
+      "
+    volumes:
+      - .:/workspace/dv_website_v2

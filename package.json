@@ -1,0 +1,15 @@
+{
+  "name": "dv_website_v2",
+  "version": "1.0.0",
+  "description": "A dual-domain LAMP stack system for IC Design Verification project management and reporting.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.54.1"
+  }
+}

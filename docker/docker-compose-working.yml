@@ -1,0 +1,82 @@
+networks:
+  dv-network:
+    driver: bridge
+
+services:
+  # IT Domain Website
+  it-domain-web:
+    image: dv-website-working
+    container_name: it-domain-web-working
+    ports:
+      - "8080:80"
+    environment:
+      - DB_HOST=it-domain-db
+      - DB_NAME=it_domain_db
+      - DB_USER=it_user
+      - DB_PASS=it_password
+    depends_on:
+      - it-domain-db
+    networks:
+      - dv-network
+    command: >
+      sh -c "
+      cp -r /tmp/it-domain/* /var/www/html/ 2>/dev/null || true &&
+      apache2-foreground
+      "
+
+  # NX Domain Website  
+  nx-domain-web:
+    image: dv-website-working
+    container_name: nx-domain-web-working
+    ports:
+      - "8081:80"
+    environment:
+      - DB_HOST=nx-domain-db
+      - DB_NAME=nx_domain_db
+      - DB_USER=nx_user
+      - DB_PASS=nx_password
+    depends_on:
+      - nx-domain-db
+    networks:
+      - dv-network
+    command: >
+      sh -c "
+      cp -r /tmp/nx-domain/* /var/www/html/ 2>/dev/null || true &&
+      apache2-foreground
+      "
+
+  # IT Domain Database
+  it-domain-db:
+    image: mysql:8.0
+    container_name: it-domain-mysql-working
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: it_domain_db
+      MYSQL_USER: it_user
+      MYSQL_PASSWORD: it_password
+    networks:
+      - dv-network
+    volumes:
+      - it_domain_data:/var/lib/mysql
+
+  # NX Domain Database
+  nx-domain-db:
+    image: mysql:8.0
+    container_name: nx-domain-mysql-working
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: nx_domain_db
+      MYSQL_USER: nx_user
+      MYSQL_PASSWORD: nx_password
+    networks:
+      - dv-network
+    volumes:
+      - nx_domain_data:/var/lib/mysql
+
+volumes:
+  it_domain_data:
+  nx_domain_data:

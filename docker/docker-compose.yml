@@ -7,14 +7,16 @@ networks:
 services:
   # IT Domain Website
   it-domain-web:
-    build: .
+    build: 
+      context: ..
+      dockerfile: docker/Dockerfile
     container_name: it-domain-web
     ports:
       - "8080:80"
     volumes:
-      - ./it-domain:/var/www/html
-      - ./docker/apache/it-domain.conf:/etc/apache2/sites-available/000-default.conf
-      - ./test-db-connection.php:/var/www/test-db-connection.php
+      - ../src/it-domain:/var/www/html
+      - ./apache/it-domain.conf:/etc/apache2/sites-available/000-default.conf
+      - ../test-db-connection.php:/var/www/test-db-connection.php
     depends_on:
       - it-domain-db
     environment:
@@ -27,14 +29,16 @@ services:
 
   # NX Domain Website  
   nx-domain-web:
-    build: .
+    build: 
+      context: ..
+      dockerfile: docker/Dockerfile
     container_name: nx-domain-web
     ports:
       - "8081:80"
     volumes:
-      - ./nx-domain:/var/www/html
-      - ./docker/apache/nx-domain.conf:/etc/apache2/sites-available/000-default.conf
-      - ./test-db-connection.php:/var/www/test-db-connection.php
+      - ../src/nx-domain:/var/www/html
+      - ./apache/nx-domain.conf:/etc/apache2/sites-available/000-default.conf
+      - ../test-db-connection.php:/var/www/test-db-connection.php
     depends_on:
       - nx-domain-db
     environment:
@@ -58,10 +62,15 @@ services:
       MYSQL_PASSWORD: it_password
     volumes:
       - it_domain_data:/var/lib/mysql
-      - ./database/it-domain-schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
-      - ./database/it-domain-data.sql:/docker-entrypoint-initdb.d/02-data.sql
+      - ../database/it-domain-schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+      - ../database/it-domain-data.sql:/docker-entrypoint-initdb.d/02-data.sql
     networks:
       - dv-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot_password"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   # NX Domain Database
   nx-domain-db:
@@ -76,10 +85,15 @@ services:
       MYSQL_PASSWORD: nx_password
     volumes:
       - nx_domain_data:/var/lib/mysql
-      - ./database/nx-domain-schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
-      - ./database/nx-domain-data.sql:/docker-entrypoint-initdb.d/02-data.sql
+      - ../database/nx-domain-schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+      - ../database/nx-domain-data.sql:/docker-entrypoint-initdb.d/02-data.sql
     networks:
       - dv-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot_password"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   it_domain_data:
