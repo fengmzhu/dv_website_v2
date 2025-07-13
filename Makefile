@@ -35,7 +35,8 @@ help:
 	@echo ""
 	@echo "$(YELLOW)Basic Operations:$(NC)"
 	@echo "  make build        - Build Docker images"
-	@echo "  make up           - Start all containers"
+	@echo "  make up           - Start all containers (smart with fallback)"
+	@echo "  make up-volumes   - Start containers with volume mounts only"
 	@echo "  make smart-up     - Smart startup (handles file sharing issues)"
 	@echo "  make down         - Stop all containers"
 	@echo "  make restart      - Restart all containers"
@@ -76,14 +77,36 @@ build:
 	@echo "$(YELLOW)Building Docker images...$(NC)"
 	$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) build
 
-## Start all containers
+## Start all containers (tries volume mounts first, falls back to file copying)
 up:
 	@echo "$(YELLOW)Starting containers...$(NC)"
 	@echo "$(YELLOW)Cleaning up any conflicting containers...$(NC)"
 	@docker rm -f it-domain-web nx-domain-web it-domain-mysql nx-domain-mysql 2>/dev/null || true
+	@docker rm -f it-domain-db nx-domain-db 2>/dev/null || true
+	@docker stop $$(docker ps -q --filter "publish=3306" --filter "publish=3307" --filter "publish=8080" --filter "publish=8081") 2>/dev/null || true
+	@echo "$(YELLOW)Attempting to start with volume mounts...$(NC)"
+	@if $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) up -d 2>/dev/null; then \
+		echo "$(GREEN)✅ Containers started with volume mounts$(NC)"; \
+		echo "$(YELLOW)Initializing databases...$(NC)"; \
+		sleep 10; \
+		$(MAKE) db-init-quick; \
+	else \
+		echo "$(YELLOW)Volume mounts failed, falling back to file copying method...$(NC)"; \
+		$(MAKE) fix-docker; \
+	fi
+
+## Start containers using volume mounts only (no fallback)
+up-volumes:
+	@echo "$(YELLOW)Starting containers with volume mounts...$(NC)"
+	@echo "$(YELLOW)Cleaning up any conflicting containers...$(NC)"
+	@docker rm -f it-domain-web nx-domain-web it-domain-mysql nx-domain-mysql 2>/dev/null || true
+	@docker rm -f it-domain-db nx-domain-db 2>/dev/null || true
 	@docker stop $$(docker ps -q --filter "publish=3306" --filter "publish=3307" --filter "publish=8080" --filter "publish=8081") 2>/dev/null || true
 	$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) up -d
-	@echo "$(GREEN)✅ Containers started$(NC)"
+	@echo "$(GREEN)✅ Containers started with volume mounts$(NC)"
+	@echo "$(YELLOW)Waiting for databases to initialize...$(NC)"
+	@sleep 10
+	@$(MAKE) db-init
 
 ## Start in development mode
 dev:
